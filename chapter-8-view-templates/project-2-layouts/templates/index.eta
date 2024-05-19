@@ -1,0 +1,5 @@
+<% /* / refers to /templates */ %>
+<% layout("/layouts/layout.eta") %>
+
+<h1><%= it.heading ?? "The heading!" %></h1>
+<p>The content!</p>

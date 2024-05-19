@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title><%= it.title ?? "Hello layouts!" %></title>
+  </head>
+  <body>
+    <%~ include("/partials/menu.eta") %>
+    <%~ it.body %>
+  </body>
+</html>

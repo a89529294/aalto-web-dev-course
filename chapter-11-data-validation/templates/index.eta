@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello forms!</title>
+  </head>
+  <body>
+    <%~ include("/partials/validation-errors.eta", { field: "Email", errors: it?.errors?.email?._errors }) %>  
+    <%~ include("/partials/validation-errors.eta", { field: "Year of birth", errors: it?.errors?.yearOfBirth?._errors }) %>
+    <form method="POST" action="/emails">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" value="<%= it?.email ?? '' %>" /><br/>
+      <label for="yearOfBirth">Year of birth:</label>
+      <input type="number" id="yearOfBirth" name="yearOfBirth" value="<%= it?.yearOfBirth ?? '' %>" /><br/>
+      <input type="submit" />
+    </form>
+  </body>
+</html>

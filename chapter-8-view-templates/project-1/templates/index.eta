@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello there!</title>
+  </head>
+  <body>
+    <h1>The heading: <%= it.heading %>!</h1>
+    <% if (it.count === 1) { %>      
+    <p>The secret: <%= it.secret %>!</p>    
+    <% } %>    
+    <p>The count: <%= it.count %>!</p>
+    <p>Escaped HTML: <%= it.variable %>!</p>
+    <p>Non-escaped HTML: <%~ it.variable %>!</p>
+    <p>Email address: <%= it.email ?? "Unknown" %>!</p>
+    <p>People:</p>    
+    <ul>    
+      <% it.people.forEach((person) => { %>
+        <li><%= person.name %></li>    
+      <% }); %>    
+    </ul>
+    <p>Translations:</p>    
+    <table>      
+      <tr>        
+        <th>#</td>        
+        <th>Finnish</th>        
+        <th>English</th>      
+      </tr>      
+      <% it.translations.forEach((translation, index) => { %>      
+      <tr>        
+        <td><%= index + 1 %></td>        
+        <td><%= translation.fi %></td>        
+        <td><%= translation.en %></td>      
+      </tr>      
+      <% }); %>    
+    </table>
+    <p>Game status</p>    
+      <table>      
+        <% it.board.forEach((row) => { %>        
+          <tr>          
+            <% row.forEach((cell) => { %>            
+              <td><%= cell %></td>          
+            <% }); %>        
+          </tr>      
+        <% }); %>    
+      </table>
+  </body>
+</html>
