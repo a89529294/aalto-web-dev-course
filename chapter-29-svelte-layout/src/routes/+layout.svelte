@@ -1,16 +1,13 @@
-<header>
-  <h1>My application</h1>
-</header>
+<script>
+  import "../app.css";
+  import Navbar from "../components/navbar.svelte";
+  import Footer from "../components/footer.svelte";
+</script>
 
-<div>
+<Navbar />
+
+<main class="container mx-auto">
   <slot />
-</div>
+</main>
 
-<footer>
-  <p>My application is cool.</p>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
-  </nav>
-</footer>
+<Footer />
